@@ -1,112 +1,93 @@
-# 🚗 Car Selling Web Application
+# 🚗 Car Buying and Selling Website
 
-A simple web application for selling cars online, allowing users to browse cars, book a purchase, register/login, and contact the admin for queries.
+A robust, web-based Car Marketplace designed to connect buyers and sellers seamlessly. Built with PHP and MySQL, focusing on performance, security, and a modern user experience using Tailwind CSS.
 
-# 📌 Features
+![Status: Deployed](https://img.shields.io/badge/Status-Deployed-success?style=flat-square)
+![Tech: PHP](https://img.shields.io/badge/Tech-PHP%208.x-blue?style=flat-square)
+![DB: MySQL](https://img.shields.io/badge/DB-MySQL-orange?style=flat-square)
 
-Homepage: Displays latest cars with price, details, and "Buy Now" options.
+> **🚀 Live Demo:** [http://mycarsite.rf.gd](http://mycarsite.rf.gd)
+>
+> ⚠️ **Note:** As this demo is hosted on free shared hosting (`.rf.gd`), some browsers (especially mobile) may incorrectly flag the domain as "Dangerous". This is a known false positive due to the hosting provider's shared reputation and does not reflect the safety of this project's code.
 
-Sell Car Page: Car booking form with validation.
+![Website Screenshot](assets/screenshot.png)
 
-Contact Page: Contact form with name, email, and message validation.
+---
 
-User Authentication: Register, Login, and Logout functionality.
+## 🚀 Key Features
 
-Responsive Design using HTML, CSS, and Font Awesome icons.
+### 👨‍💼 For Buyers
+- **Advanced Search**: Filter cars by brand, model, price, and year.
+- **Detailed Listings**: View high-quality images, specifications, and seller details.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.
+- **Secure Contact**: Direct communication with verified sellers.
 
-🛠️ Technologies Used
+### 🏷️ For Sellers
+- **Seller Dashboard**: Manage your car listings, view stats, and enquiries.
+- **Easy Listing**: Upload photos and details in a few clicks.
+- **Status Tracking**: Monitor the status of your listings (Active, Sold, Pending).
 
-Frontend: HTML5, CSS3, JavaScript
+### 🛡️ For Administrators
+- **Admin Panel**: Complete oversight of users, listings, and platform activities.
+- **User Management**: Approve/Ban sellers and verified users.
+- **Content Moderation**: Review and approve listings before they go live.
 
-Backend: PHP
+---
 
-Database: MySQL
+## 🛠️ Technology Stack
 
-Icons: Font Awesome
+- **Frontend**: HTML5, CSS3, Tailwind CSS, JavaScript (Vanilla)
+- **Backend**: Native PHP 8.x
+- **Database**: MySQL / MariaDB
+- **Security**: Password Hashing, Prepared Statements (SQL Injection Prevention), Session Management
 
-# 📂 Project Structure
-project-folder/
-│
-├── index.html              # Homepage
-├── contact.html            # Contact page
-├── Sell_car.html           # Car booking page
-├── login.php               # Login script
-├── registration.php        # Registration script
-├── logout.php              # Logout script
-├── contact.php             # Handles contact form submission
-├── config.php              # Database configuration
-├── bmw-22428.png           # Image used on homepage
-└── README.md               # Project documentation
+---
 
-# ⚙️ Setup Instructions
+## 📥 Installation & Local Setup
 
-Clone the Repository
+1.  **Clone/Download** the repository to your XAMPP/WAMP `htdocs` folder.
+2.  **Import Database**:
+    *   Open phpMyAdmin (`http://localhost/phpmyadmin`).
+    *   Create a database named `car_project`.
+    *   Import `database/car_project.sql` (or similar file in `database/` folder).
+3.  **Configure Database**:
+    *   Edit `includes/db.php`.
+    *   Set `$host`, `$user`, `$pass`, `$dbname` relevant to your local setup.
+4.  **Run the Project**:
+    *   Navigate to `http://localhost/car-selling-website-main/`.
 
-git clone <your-repository-link>
+---
 
+## ☁️ Deployment (InfinityFree)
 
-Move to your Server Directory (XAMPP or WAMP)
-Place the project folder in:
+This project is optimized for zero-cost deployment on InfinityFree.
 
-C:\xampp\htdocs\
+### Verified Configuration
+- **Host**: `sqlXXX.infinityfree.com` (Check your CPanel)
+- **PHP Version**: 7.4 / 8.2 (Supported)
+- **Database**: Import via phpMyAdmin in VPanel.
 
+**Quick Deploy Steps:**
+1.  Upload all files to `/htdocs`.
+2.  Import the SQL file via phpMyAdmin.
+3.  Update `includes/db.php` with your VPanel credentials.
 
-Create Database in phpMyAdmin
+---
 
-Create a database (e.g., car_sell_db)
+## 🔒 Security Measures
 
-Import or create tables for:
+- **Authentication**: `password_hash()` used for storing credentials.
+- **Database**: `mysqli` Prepared Statements used to prevent SQL Injection attempts.
+- **Validation**: Server-side validation for all inputs to prevent XSS.
+- **Access Control**: Role-based access (Buyer vs Seller vs Admin).
 
-users (for registration/login)
+---
 
-contacts (for contact form)
+## 📬 Contributors
+- **Developer**: Onkar Vyawahare
+  
+  [![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github)](https://github.com/onkarvyawahare04-jpg)
 
-bookings (for car purchase)
+- **Developer**: Satyam Modi
 
-Update Database Credentials in config.php
-
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "car_sell_db";
-
-
-Start Apache & MySQL in XAMPP/WAMP and run:
-
-http://localhost/project-folder/index.html
-
-# ✅ Form Validations
-
-Contact Form: Validates name, email, and message length (JavaScript).
-
-Sell Car Form: Validates name (letters only), email, and phone (10 digits).
-
-Registration: Basic PHP validation (ensure strong passwords recommended).
-
-# 🔐 Security Recommendations
-
-Use prepared statements to prevent SQL injection.
-
-Store passwords using password_hash() in PHP.
-
-Validate all user input on both client and server sides.
-
-# 📷 Screenshots
-
-## Home Page
-![home page](https://github.com/user-attachments/assets/5bdb819c-558f-49df-ad4c-3cab5226e836)
-
-## Sell Car Form
-![sell car](https://github.com/user-attachments/assets/bef9eacf-8e8f-43f7-b1c1-57b083377869)
-
-## About us
-![about](https://github.com/user-attachments/assets/fef17cd2-54a7-4edc-a4e2-03d4ecae5d80)
-
-## Login & Register Pages
-![Login](https://github.com/user-attachments/assets/13983b55-6b86-422d-8c52-ad1c8cc80c4c)
-![Registraon](https://github.com/user-attachments/assets/17933015-1215-40a0-b292-ea91d852b14c)
-
-## 📬 Contact
-- Developer: Onkar Vyawahare
-- GitHub: https://github.com/onkarvyawahare04-jpg
-
+  [![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github)](https://github.com/satyamodi555-oss)
